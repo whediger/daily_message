@@ -8,6 +8,11 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
+router.get('/logout', function(req, res, next){
+  req.session = null;
+  res.redirect('/');
+});
+
 router.get('/newuser', function(req, res, next) {
   res.render('newuser');
 });
