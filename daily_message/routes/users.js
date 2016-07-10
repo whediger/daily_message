@@ -8,6 +8,7 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
+
 router.get('/logout', function(req, res, next){
   req.session = null;
   res.redirect('/');
@@ -15,6 +16,23 @@ router.get('/logout', function(req, res, next){
 
 router.get('/newuser', function(req, res, next) {
   res.render('newuser');
+});
+
+
+
+//-----+==}=======>
+router.use(auth.isLoggedIn);
+
+router.post('/login', function(req, res, next) {
+  auth.passport.authenticate('local', function(err, user, info){
+    console.log(user);
+    if (err) {
+      res.render('./index', {error: err})
+    } else if (user) {
+      req.session.userId = user.id;
+      res.redirect('/home');
+    }
+  })(req, res, next);
 });
 
 router.post('/newuser', function(req, res, next) {

@@ -4,9 +4,9 @@
 
 <a href="/users/newuser">create new account</a>
 
-<form class="login" action="index.html" method="post">
+<form class="login" action="/users/login" method="post">
   <fieldset>
-    <legend>Login</legend>
+    <legend>Login <span class="error">{{error}}</span></legend>
     <label for="username">Username:</label>
       <input type="text" name="username">
     <label for="password">Password:</label>

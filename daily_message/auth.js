@@ -4,8 +4,8 @@ var passport = require('passport');
 
 var localStrategy = require('passport-local');
 
-passport.use(new localStrategy(function(usrname, password, done) {
-  db.findUserByUserName(username)
+passport.use(new localStrategy(function(username, password, done) {
+  db.findUserByUsername(username)
   .then(function(user, err) {
     if (!user){
       done("Error: User does not Exist!")
