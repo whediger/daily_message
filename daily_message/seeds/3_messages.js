@@ -26,7 +26,7 @@ exports.seed = function(knex, Promise) {
         knex('messages').insert({message_list_id: benFranklin, message:'Sincerity. Use no hurtful deceit; think innocently and justly, and, if you speak, speak accordingly.'}),
         knex('messages').insert({message_list_id: benFranklin, message:'Justice. Wrong none by doing injuries, or omitting the benefits that are your duty.'}),
         knex('messages').insert({message_list_id: benFranklin, message:'Moderation. Avoid extremes; forbear resenting injuries so much as you think they deserve.'}),
-        knex('messages').insert({message_list_id: benFranklin, message:'Cleanliness. Tolerate no uncleanliness in body, cloaths, or habitation.'}),
+        knex('messages').insert({message_list_id: benFranklin, message:'Cleanliness. Tolerate no uncleanliness in body, cloathes, or habitation.'}),
         knex('messages').insert({message_list_id: benFranklin, message:'Tranquillity. Be not disturbed at trifles, or at accidents common or unavoidable.'}),
         knex('messages').insert({message_list_id: benFranklin, message:'Chastity. Rarely use venery but for health or offspring, never to dullness, weakness, or the injury of your own or anothers peace or reputation.'}),
         knex('messages').insert({message_list_id: benFranklin, message:'Humility. Imitate Jesus and Socrates.'}),

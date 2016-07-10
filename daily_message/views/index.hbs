@@ -5,8 +5,12 @@
 <a href="/newuser">create new account</a>
 
 <form class="login" action="index.html" method="post">
-  <button type="button" name="button" action="newuser">New User</button>
-  <input type="text" name="name" value="username" placeholder="username">
-  <input type="password" name="name" value="password">
-  <button type="submit" name="button">Login</button>
+  <fieldset>
+    <legend>Login</legend>
+    <label for="username">Username:</label>
+      <input type="text" name="username">
+    <label for="password">Password:</label>  
+    <input type="password" name="password" value="password">
+    <button type="submit" name="button">Login</button>
+  </fieldset>
 </form>

@@ -7,6 +7,11 @@ a {
   color: #00B7FF;
 }
 
+form .login {
+  display: flex;
+  flex-direction: column;
+}
+
 form  fieldset {
     display: flex;
     flex-direction: column;
@@ -14,5 +19,5 @@ form  fieldset {
 }
 
 input {
-  margin: 15px;
+  margin: 10px;
 }
