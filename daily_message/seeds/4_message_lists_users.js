@@ -15,24 +15,18 @@ exports.seed = function(knex, Promise) {
         var message_lists = data[2];
 
         //seed_message as var to keep functions under control
-        var seed_message = 'Cleanliness. Tolerate no uncleanliness in body, cloathes, or habitation.';
+        var seed_message  = 'Cleanliness. Tolerate no uncleanliness in body, cloathes, or habitation.';
         var seed_message2 = 'Temperance. Eat not to dullness; drink not to elevation.';
-        var benList = "Benjamin Franklin 13 Virtues"
-        console.log(users[0].username);
-        console.log('-----------  +===}=======>');
-        console.log(messages[0].message);
-        console.log('-----------  +===}=======>');
-        console.log(message_lists[0].name);
-
-
+        var benList = "Benjamin Franklin 13 Virtues";
 
       return Promise.all([
         // Inserts seed entries
-        //knex('message_lists_users').insert({message_list_id: 'rowValue1'}),
-        //knex('message_lists_users').insert({colName: 'rowValue2'}),
+        knex('message_lists_users').insert({next_message_id: getNextMessageIdByMessage(seed_message2, messages),
+                                            message_list_id: getIdByMessageListName(message_lists, benList),
+                                                    user_id: getIdByUsername(users, 'sallySays')}),
         knex('message_lists_users').insert({next_message_id: getNextMessageIdByMessage(seed_message, messages),
                                             message_list_id: getIdByMessageListName(message_lists, benList),
-                                            user_id: getIdByUsername(users, 'joey457')})
+                                                    user_id: getIdByUsername(users, 'joey457')})
       ]);
     });
 };
@@ -43,7 +37,6 @@ function getNextMessageIdByMessage(message, messages){
       return messages[i].id;
   }
 }
-
 
 function getIdByUsername(users, username){
   for ( var i = 0; i < users.length; i++ ){
