@@ -1,15 +1,25 @@
-<a href="/users/logout"><h3>Logout</h3></a>
 
 <h1>Lists available</h1>
+<a class="btn btn-primary" role="button" href="/users/logout">logout</a>
 
-<a href="#"><h3>Add New List</h3></a>
+
+<a class="btn btn-primary" role="button" href="#">add new list</a>
 
 {{#each lists}}
 <div class="listcontainer">
-  <h2>{{this.name}}</h2>
-  <a href="#" data-list-id="{{this.id}}">See list contents</a>
-  <a href="#" data-list-id="{{this.id}}">schedule delivery</a>
-  <a href="#" data-list-id="{{this.id}}">Edit List</a>
-  <a href="#" data-list-id="{{this.id}}">Delete List</a>
+  <h2>{{this.title}}</h2>
+  <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseContents{{this.id}}" aria-expanded="false" aria-controls="collapseExample" data-list-id="{{this.id}}">
+    see list contents
+  </a>
+  <a class="btn btn-primary" role="button" href="#" data-list-id="{{this.id}}">schedule delivery</a>
+  <a class="btn btn-primary" role="button" href="#" data-list-id="{{this.id}}">edit list</a>
+  <a class="btn btn-primary" role="button" href="#" data-list-id="{{this.id}}">delete list</a>
+  <div class="collapse" id="collapseContents{{this.id}}">
+    <div class="well">
+      {{#each this.messages}}
+        <p>{{this}}</p>
+      {{/each}}
+    </div>
+  </div>
 </div>
 {{/each}}
