@@ -24,7 +24,6 @@ module.exports = {
     body.password = hash;
     return db.addUser(body)
     .then(function(id) {
-      console.log(id);
       return id[0];
     })
   },
