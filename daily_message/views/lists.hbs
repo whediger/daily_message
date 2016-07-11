@@ -1,9 +1,8 @@
 
 <h1>Lists available</h1>
 <a class="btn btn-primary" role="button" href="/users/logout">logout</a>
-
-
 <a class="btn btn-primary" role="button" href="#">add new list</a>
+<a class="btn btn-primary" role="button" href="/users/home">home</a>
 
 {{#each lists}}
 <div class="listcontainer">
@@ -16,9 +15,11 @@
   <a class="btn btn-primary" role="button" href="#" data-list-id="{{this.id}}">delete list</a>
   <div class="collapse" id="collapseContents{{this.id}}">
     <div class="well">
-      {{#each this.messages}}
-        <p>{{this}}</p>
-      {{/each}}
+      <ol>
+        {{#each this.messages}}
+          <li>{{this}}</li>
+        {{/each}}
+      </ol>
     </div>
   </div>
 </div>
