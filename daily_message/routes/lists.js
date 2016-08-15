@@ -13,10 +13,8 @@ router.get('/', function(req, res, next) {
 // });
 
 router.get('/lists', function(req, res, next) {
-  return db.getMessagesInLists()//todo - change to return title param and array of messages
+  return db.getMessagesInLists()
   .then(function(lists) {
-    console.log('----------------lists-------+=={========>');
-    console.log(lists[0].messages);
     res.render('lists', {lists: lists})
   })
 });
